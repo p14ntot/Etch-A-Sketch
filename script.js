@@ -2,7 +2,8 @@ const container=document.getElementById('main-container');
 
 
 // use the css function repeat function repeat() to create 16 rows and colums
-let num=16
+
+
 container.style.gridTemplateColumns='repeat(16,1fr)'
 container.style.gridTemplateRows='repeat(16,1fr)'
 
@@ -43,15 +44,17 @@ function reset(){
 }
     
 
-/*function change(){
-    let num=prompt('Give number of rows and colums');
+function change(){
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+      }
 
-    const rem=document.querySelectorAll('.newDiv')
-    rem.forEach(function(newDiv){
+      let num = parseInt(prompt('Give number of rows and columns'));
 
-        container.removeChild(newDiv);
-    })
-
+      container.style.gridTemplateColumns=`repeat(${num},1fr)`
+      container.style.gridTemplateRows=`repeat(${num},1fr)`
+      
+    
 
     for(let rows=0; rows<num; rows++){
     
@@ -80,7 +83,7 @@ function reset(){
                 })
     })
 
-}*/
+}
     
             
             
